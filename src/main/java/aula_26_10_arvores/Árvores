@@ -1,0 +1,8 @@
+
+Uma árvore é acessada através da raiz, é nela que há um apontador.
+Essa raiz se ramifica entre vários nós/galhos;
+ - Cada nó da arvore é a raiz de uma subárvore.
+ - o nó mais abaixo, e sem filhos é chamado de folha
+ - o grau é definido pela quandidade de subarvores ligadaas diretamente aquele nó
+ - nível é a profundidade da árvore, a quantidade de nós para se chegar ate la.
+ - a altura é  o maior nível encontrado.

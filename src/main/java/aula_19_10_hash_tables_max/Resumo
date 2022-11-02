@@ -1,0 +1,15 @@
+Fator de carga a =
+    slots disponíveis na tabela(M) = 1000;
+    registors preenchidos n;   
+    a = n/M, e )0 <= a <= 1);
+
+
+Endereçamento aberto - somente ocupando slots, sem (cabeças de listas):
+    O número médo de songagens em busca mal sucedida = 1/(1-a) uniforme.
+
+    Idem para inserção
+
+Endereçamento encadeado - slots são cabeças de listas encadeadas
+    a >= 1
+    Busca no caso médio = 
+
