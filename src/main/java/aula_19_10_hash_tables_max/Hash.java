@@ -106,8 +106,7 @@ public class Hash {
                         if (colecao[chave].prox == null)
                                 colecao[chave] = null;
                         // há colisões
-                        else{
-                            
+                        else{                        
                             Cliente aux = colecao[chave];
                             while (aux.getCod() != codCliente){
                                 aux = aux.prox;

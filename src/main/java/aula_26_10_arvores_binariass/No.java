@@ -1,4 +1,4 @@
-package exemplo;
+package aula_26_10_arvores_binariass;
 
 public class No {
 	private No esq; 
