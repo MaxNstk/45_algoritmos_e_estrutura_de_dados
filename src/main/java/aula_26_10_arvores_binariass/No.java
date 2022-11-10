@@ -10,6 +10,10 @@ public class No {
 	public No(int chave) {
 		this.chave = chave;
 	}
+        
+        public int getSize() {
+            return this.size;
+        }
 
 	public No(int chave, String filename, int size) {
 		this.chave = chave;
@@ -43,4 +47,7 @@ public class No {
 		this.dir = dir;
 	}
 	
+        public String toString(){
+            return this.filename;
+        }
 }

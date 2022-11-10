@@ -15,17 +15,24 @@ public class Principal {
 		arvore.insere(arvore.getRaiz(), 45, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 1, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 18, "teste", 10);
-		arvore.insere(arvore.getRaiz(), 35, "teste", 10);
-		arvore.insere(arvore.getRaiz(), 60, "teste", 10);
+		arvore.insere(arvore.getRaiz(), 35, "maximus", 10);
+		arvore.insere(arvore.getRaiz(), 60, "maxua", 10);
 		arvore.insere(arvore.getRaiz(), 32, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 80, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 48, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 25, "teste", 10);
 		arvore.insere(arvore.getRaiz(), 90, "teste", 10);
 		
-		arvore.caminhaPreFixado(arvore.getRaiz());
-		arvore.caminhaCentral(arvore.getRaiz());
-		arvore.caminhaPosFixado(arvore.getRaiz());
+//		arvore.caminhaPreFixado(arvore.getRaiz());
+//		arvore.caminhaCentral(arvore.getRaiz());
+//		arvore.caminhaPosFixado(arvore.getRaiz());
+                System.out.println(arvore.fileSize(arvore.getRaiz(), 60));
+                System.out.println(arvore.achaNo(arvore.getRaiz(), 60).toString());
+                System.out.println(arvore.getNivel(arvore.getRaiz(), 60, 0));
+                System.out.println(arvore.getNivel2(arvore.getRaiz(), 60));
+                System.out.println(arvore.retornaNivel(arvore.getRaiz(), 60));
+                System.out.println(arvore.contaNos(0,arvore.getRaiz()));
+                System.out.println(arvore.totalSize(0,arvore.getRaiz()));
 		
 		/*
 		
