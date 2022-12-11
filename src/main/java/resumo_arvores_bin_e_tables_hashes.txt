@@ -1,0 +1,95 @@
+ALGORITMOS E ESTRUTURAS DE DADOS - RESUMO PROVA2
+
+TABELAS HASH:
+
+1. Busca linear pode ser çenta, caso haja uma relação direta entre a posição que um registro se encontra na tabela e sua chave de busca é possível agilizar a busca com uma Tabela Hash.
+2. Tabela hash é um Vetor de registros (em sua forma mais simples)
+3. Na tabela hash ocorrem situações em que há "buracos no array"
+4. Para inserção, é realizado um cálculo acima da chave do registro e o seu resultado vai ser a posição em que deve ser armazenada no array.
+4.1 - Esse cálculo é a função hash.
+4.2 - Hashing do método da divisão: (Chave % 701) + 1  -- O array tem 701 posições.
+
+5. Sobre as colisões (quando a função hash aplicada a dois registros com chaves diferentes resulta na mesma posição):
+
+5.1. Podem ser de endereçamento aberto.
+5.1.1. Nesse caso, se ocorra uma colisão, o registro deverá ser inserido no próximo espaço livre do array.
+
+5.2 Podem ser de endereçamento encadeado.
+5.2.1 Nesse caso, quando haver uma colisão, os registros são colocados em uma lista encadeada.
+5.2.2 O Primeiro elemento que ocupou a tabela hash naquela posição se tornará a "cabeça" de uma lista encadeada.
+5.2.3 Futuras colisões serão colocadas ao final da lista
+5.2.3 Caso haja um elemento na posição da tabela hash a sua referência para o próximo será nula (null).
+5.2.4 O mesmo ocorre para o último elemento de uma lista encadeada em alguma posição da tabela em que tiver ocorrido colisões.
+
+6. Para se exlcluir um registro, é feito um hashing no código e excluido o elemento na posição da tebela, como na inserção (caso não haja colisções)
+6.1 Caso haja colisões, é necessário buscar entre os elementos colidios, aquele que tem a chave iqual a chave antes do hashing.
+
+7. Sobre as técnicas de hashing.
+7.1 uma boa função hash é aquele que dispersa bem os elemento, evitando o máximo possível as colisões.
+7.2 Algumas funções:
+	(
+	Chaves Numéricas						
+		Resto da divisão (módulo N)
+
+		Mid-square – onde q= chave ao quadrado, toma-se “x” bits do meio de “q”
+
+		Folding – a chave é particionada em blocos de bits, então faz-se a soma ou multiplicação destes blocos
+
+	Chaves não numéricas
+		Soma dos códigos ASCII da chave
+	)
+
+8. Não há hashing perfeito, que não terá repetições, mas existem bons métodos e cálculos para fazer uma tabela hash eficiente.
+
+9. Buscas X Densidade da tabela:
+ 
+	Slots disponíveis na tabela (M) = 1000
+	Registros inseridos (n) = 500
+	Fator de carga (α) = n/M = 500/1000 = 0,5
+
+	No endereçamento aberto --> 0 <= α <= 1;
+	No endereçamento encadeado --> frequentemente α > 1;
+
+	Quanto maior o fator de carga(α), mais lenta é a busca;
+
+9.1 Endereçamento aberto para hash uniforme :
+	O número médio de sondagens em uma busca mal sucedida é: 1/(1-α);
+	Hipoteticamente: α=0,5 --> 1/(1-0,5) = 2
+	Idem na inserção
+
+9.2 Endereçamento Ecnadeado para hash uniforme:
+	
+	Busca no caso médio --> O(1+α)
+	Hipoteticamente: α = 2000/500 = 4; --> O(1+4) = 5
+	Inserção = 1(n)
+
+10. Estatisticas da tebela hash:
+	Não deve ter taxa de ocupação maior que 75%
+	Uma taxa de 50% geralmente traz bons resultados.
+	Uma taxa de 25% pode trazer gasto excessivo de memória.
+	Um número primo não muito próximo a uma potência exata de 2 normalmente é uma boa escolha para o tamanho da tabela no método da divisão.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ÁRVORES:
+
+Árvores são esttuturas de dados que fazem uma relação hierárquica entre dados (chamados de nós).
+Formalmente a árvore é um conjunto finito T de um ou mais nós, tais que:
+	Exite um nó denomidado de raiz.
+	Os demais nós formam subárvores abaixo dele, sendo esse nós, as raízes da subárvore e assim em diante.
+	O número de subárvores de um nó determina o grau daquele nó. Um nó de grau 0 é denomidado nó folha. afinal é a última parte da árvore
+	O nível de um nó é definido pela quantidade de linhas que liga este nó até a raiz + 1. A raiz tem nível 1.
+	A altura da árvore é equivalente ao maior nível dentre todos os nós.
+	Denomina-se floresta um conjunto de zero ou mais árvores disjuntas. Assim, se eliminarmos o nó raiz de uma árvore, o que dela restar forma uma floresta. Inversamente se unirmos as raízes das árvores que formam uma floresta com um nó adicional, formamos uma árvore.
+	Quando a a ordem é significativa, diz se que ela é ordenada
+	Quando a ordem não é importante, chamamos a árvore de orientada, uma vez que somente a oridentação dos nós é importante.
+
+
+ÁRVORES BINÁRIAS:
+
+	Os nós filhos de um nó pai dependem do seu valor. A direita só haverá nós maiores que o nó pai, na esquerda, menores;
+
+Nomencaltura:
+	Árvore estritamente binária - Uma árvore estritamente binária é aquela em que cada nó possui exatamente 0 ou 2 nós. 
+	Árvore binária completa - Uma árvore binária completa é aquela que apresenta a seguinte propriedade: se v é um nó tal que alguma sub-árvore de v é vazia, então v se localiza no penúltimo ou último nível da árvore.
+	Árvore binária cheia - se v apresenta uma de suas sub-árvores vazia então v se encontra obrigatoriamente no último nível da árvore. Pode-se afirmar que uma árvore binária cheia também é completa e estritamente binária

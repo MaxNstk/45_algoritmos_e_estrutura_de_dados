@@ -1,0 +1,46 @@
+package exercicios_grafos_;
+
+public class Aresta {
+	
+	public Vertice destino;
+	public int peso;
+	
+	public Aresta(){}
+	
+	public Aresta(Vertice destino, int peso)
+	{
+		this.destino = destino;
+		this.peso = peso;
+	}	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

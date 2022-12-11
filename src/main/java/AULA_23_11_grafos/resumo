@@ -1,0 +1,58 @@
+
+GRAFOS
+
+grau de um vértice- depende da quantidade de arestas que chegam/saem dele
+    d+ é o grau da somas das que chegam
+    d- é o grau da soma das que saem
+    
+    grafos orientados - adjacencia:
+    os vizinhos são aqueles em que há um arco os ligando.
+    se o grafo for ordenado, a vizihança depende da direção, A -> B. b é vi
+    Em um grafo não orientaddo dois vértives v e w são adjacentes (ou vizinhos) se ha uma aresta
+
+
+    Caminhos apra um grafo orientado.
+    caminhos é as sequencia de arcos e vertices percorridos com o objetivo de ligar dois nós não adjacentes
+    1 -> 3 em um caso em que eles não são adjacentes. (1,2),(2,3). Podem existir múltiplos caminhos.
+    um circuito ou ciclo é um caminho infinito q pod ser percorrido no grafo (1,2), (2,4), (4,1);
+    um laço é um circuito em um unico arco (3,3);
+    um grafo acíclico é aquele q não possui circuitos.
+    Um grafo tipo rede é um tipo em que a um nó fonte (que apenas saem arestas)
+    e um (nome estranho) que apenas chegam arestas.
+
+    Grafo conexo é aquele q possui pelo menos um caminho entre qualquer par de vértices.
+    (não necessáriamente há um caminho para qualquer vértice, podem haver pares de vértices disconexos)
+    (1,2),(3,4)
+
+    Grafo fortemente conexo é aquele que para todos os nós, existem caminhos para todos os demais. 
+    (É a excessão do exclusivamente conexo);
+
+    Grafos valorados - um número pode ser associado aos nós ou arcos de um grafo (dirigio ou não);
+
+
+    Isomorfismo:
+    temos dois grafos G1 G2, são ditos isomorfos se esxite uma correspondência entre um a um entre as arestas de G1 e G2
+    Denotado por G1 ~= G2
+    A relação de adjacencia deve ser preservada entre os grafos.
+    
+
+    Caminhamento de grafos: Amplitude ou largura
+    
+    caminhamento em amplitude (breadth):
+        visitam-se todas as adjacencias desse vertice
+
+     caminhamento em profundidade:
+        Vai entrando em todas
+
+
+
+
+
+
+
+
+
+
+
+    
+    
