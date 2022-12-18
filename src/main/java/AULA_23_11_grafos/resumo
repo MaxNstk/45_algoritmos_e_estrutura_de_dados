@@ -1,14 +1,29 @@
 
 GRAFOS
 
+um grafo G é constituido por um conjunto não vazio V de vértices e por uma relação binária entre estes(par)
+  escreve-se G = (V, A).
+    V é um conjunto finito de vertices
+    A é um conjunto finito de pares não ordenados de vertices chamados arestas
+    Desenhamos um arco para ifentificar os pares
+    O tamanho de um grafo com V vertices e A arestas é a soma de V+A
+
+    A ordem de um grago G é dada pela quantidade de vértices
+    Grafos não orientasdos - vizinhança, - representam uma relação simetrica, de vai e volta.
+        as arestas que ligam os vértices não tem orientação
+
+    Grafos orientados ou direcionados (digrafos)
+        conjunto de pares ordenados, eles tem direção, para grafos serem iguais tem de ter as mesmas arestas e os mesmos vertices
+
 grau de um vértice- depende da quantidade de arestas que chegam/saem dele
     d+ é o grau da somas das que chegam
     d- é o grau da soma das que saem
     
-    grafos orientados - adjacencia:
+    grafos orientados/dirigidos - adjacencia:
     os vizinhos são aqueles em que há um arco os ligando.
-    se o grafo for ordenado, a vizihança depende da direção, A -> B. b é vi
+    se o grafo for ordenado, a vizihança depende da direção, A -> B. b a é vizinho de b, mas nçao vice versa
     Em um grafo não orientaddo dois vértives v e w são adjacentes (ou vizinhos) se ha uma aresta
+    Em uma relação de V -> X, X é sucessor de V e V é antecessor de Y
 
 
     Caminhos apra um grafo orientado.
@@ -27,7 +42,10 @@ grau de um vértice- depende da quantidade de arestas que chegam/saem dele
     Grafo fortemente conexo é aquele que para todos os nós, existem caminhos para todos os demais. 
     (É a excessão do exclusivamente conexo);
 
-    Grafos valorados - um número pode ser associado aos nós ou arcos de um grafo (dirigio ou não);
+    uma rede é um tipo especial de grafo em que ha um nó fonte (um que saem ligações em que todos os demais
+    são atingidos) e um sorvedouro(que apenas recebe ligações)
+
+    Grafos valorados - um número pode ser associado aos nós u arcos de um grafo (dirigio ou não);
 
 
     Isomorfismo:

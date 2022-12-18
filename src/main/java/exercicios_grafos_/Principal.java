@@ -43,7 +43,7 @@ public class Principal {
 
 		v = grafo.getVertice(7);
 		v.addAdjacencia(grafo.getVertice(1), 20);
-		
+		grafo.menorCaminho(1, 5);
 		/*
 		v = grafo.getVertice(1);
 		v.addAdjacencia(grafo.getVertice(2), 20);
@@ -79,7 +79,7 @@ public class Principal {
 		try{
 			grafo.caminhaLargura();
 			//grafo.reset();
-			//grafo.caminhaProfundidade();
+			// grafo.caminhaProfundidade()
 			//grafo.menorCaminho(1, 7);
 		}
 		catch (Exception e)

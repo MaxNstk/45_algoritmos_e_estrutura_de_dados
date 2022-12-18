@@ -2,7 +2,6 @@ package exercicios_grafos_;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class Vertice implements Cloneable{
 

@@ -19,7 +19,7 @@ public class Grafo {
 
 	public Grafo(int chave)
 	{
-            addVertice(chave);
+		addVertice(chave);
 	}
 	
 	public Vertice getVertice(int chave){
@@ -135,23 +135,20 @@ public class Grafo {
 			}
 		}
 	}
-        
-	public void menorCaminho(int origem, int destino){
-	}
-
+	
+		
 	/*
-	 * IMPLEMENTAÇÕES ADICIONAIS
+	 * IMPLEMENTAÇÕES BÁSICAS
 	 */
-
-        
-        	public void caminhaLargura() throws CloneNotSupportedException{
+	
+	public void caminhaLargura() throws CloneNotSupportedException{
 		Aresta adj = new Aresta();
 		ArrayList<Aresta> adjacencias;
 		Iterator<Aresta> iterator;
 		ArrayList<Vertice> fila = new ArrayList();
 		
 		if (G != null){
-			//Pega o v�rtice de entrada
+			//Pega o vértice de entrada
 			Vertice v = G.vertice;
 			fila.add(v);
 			v.visitado = true;
@@ -160,11 +157,11 @@ public class Grafo {
 				//Retira vertice da fila
 				v = fila.get(0);
 				fila.remove(0);
-				//Recupera a lista de adjac�ncias deste v�rtice
+				//Recupera a lista de adjacências deste vértice
 				adjacencias = v.getAdjacencias();
 				iterator = adjacencias.iterator();
 				
-				//Percorre a lista de adjac�ncias deste v�rtice, enfileirando
+				//Percorre a lista de adjacências deste vértice, enfileirando
 				while (iterator.hasNext())
 				{
 					adj = iterator.next();
@@ -187,13 +184,13 @@ public class Grafo {
 		
 		if (G != null){
 			Vertice v = G.vertice;
-			//Opera��o push
+			//Operação push
 			pilha.add(v);
 			v.visitado = true;
 			System.out.println(v.chave);
 
 			while (pilha.size() > 0){
-				//Opera��o peek
+				//Operação peek
 				v = pilha.get(pilha.size()-1);
 				adjacencias = v.getAdjacencias();
 				iterator = adjacencias.iterator();
@@ -202,7 +199,7 @@ public class Grafo {
 					adj = iterator.next();
 					if (!adj.destino.visitado){
 						adj.destino.visitado = true;
-						//Opera��o push
+						//Operação push
 						pilha.add(adj.destino);
 						System.out.println(adj.destino.chave);
 
@@ -210,7 +207,7 @@ public class Grafo {
 						iterator = adjacencias.iterator();
 					}
 				}
-				//Opera��o pop
+				//Operação pop
 				pilha.remove(pilha.size()-1);
 			}
 		}
@@ -236,6 +233,72 @@ public class Grafo {
 		}
 		return matrizAdjacencias;
 	}
-    
+
+	public void imprimeMenorCaminho(int origem, int destino, int[] caminhoMaisCurto){
+		String menorCaminho = String.valueOf(destino);
+		int k = destino;
+		while (k != origem){
+			menorCaminho = caminhoMaisCurto[k] + "-" + menorCaminho;
+			k = caminhoMaisCurto[k];
+		}
+		System.out.println(menorCaminho);
 	
+	}
+	
+	public void menorCaminho(int origem, int destino){
+		boolean[] visitados = new boolean[quantVertices+1];
+		int[] distancias = new int[quantVertices+1];
+		int[] caminhoMaisCurto = new int[quantVertices+1];
+
+		//Inicializa estruturas
+		for (int i=1; i <= quantVertices; i++) {
+			visitados[i] = false; 
+			caminhoMaisCurto[i] = 0;  
+			distancias[i] = Integer.MAX_VALUE; 
+		}
+		int[][] MatrizCustos = geraMatrizCustos();
+		
+		int vert = origem;
+		distancias[vert] = 0;
+		
+		//Explora fronteiras enquanto não chegar ao destino
+		while (vert != destino && vert != -1) 
+		{
+			//Explora a fronteira de "vert"3
+			for(int i=1; i <= quantVertices; i++) 
+				if (MatrizCustos[vert][i] != 0 && visitados[i]== false)   
+				{
+					int novaDist = distancias[vert] + MatrizCustos[vert][i];
+					if (novaDist < distancias[i])
+					{
+						distancias[i] = novaDist;   // atualiza menor distancia
+						caminhoMaisCurto[i] = vert;   // atualiza o menor caminho
+					}
+				}
+			visitados[vert] = true;   
+			
+			//Escolhe o próximo menor caminho
+			vert = -1; 
+			int menor = Integer.MAX_VALUE;   
+			for (int i=1; i<= quantVertices; i++)  
+ 				if (visitados[i]== false && distancias[i] < menor)  
+				{
+					menor = distancias[i];   
+					vert = i;      
+				}
+		} 
+
+		//Imprimir caminho mais curto entre origem e destino
+		if (vert == destino) 
+		{
+			System.out.println("caminho mais curto entre " + origem + " e " + destino + " tem comprimento  " +
+			distancias[destino] );
+			
+			imprimeMenorCaminho(origem, destino, caminhoMaisCurto);
+			
+		}
+		else System.out.println("nao exite caminho entre " + origem + " e " + destino);
+		
+	}
+
 }

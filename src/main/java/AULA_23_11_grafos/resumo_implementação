@@ -1,0 +1,18 @@
+Um grafo contam uma lista duplamente encadeada de Nós, ou seja, ele tem apenas um nó dentro de si.
+Cada nó contem um valor específico, um apontador para o seu anterior e um pro próximo, além de um Vértice.
+Um vértice por sua vez contem uma chave e um arraylist de Arestas.
+A aresta contem um peso e o vértice de destino (portando o arraylist só nos da os caminhos possíveis de ida, 
+portanto nem sempre é possível voltar para o vértice atual por "esse caminho")
+
+Sendo assim, para descobrir quais são as adjacencias de um nó, tem de se pegar o seu vértice e 
+verificar os demais vértices contdidos dentro das arestas.
+
+Caminhamento em largura - Para sua implementação, pegamos o nó cabeça do nosso grafo e colocamos ele em uma fila
+visitamos esse elemento na fila e removemos o mesmo da fila.
+Percorremos todas as adjacencias do vértice daquele nó e adicionamos todos a fila
+Visitamos o próximo elemento da fila e assim sussetivamente...
+Com isso iremos ir empilhando todas as adjacencias a serem visitadas em ordem de "largura" e vamos desinfileirandk
+a medida que visitamos o vértice.
+
+Caminhamento em profundidade - visitamos um nó e vamos visitando o seu primeiro vértice ate chegar ao fim
+    qua
